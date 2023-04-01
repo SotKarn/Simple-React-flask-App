@@ -5,8 +5,5 @@
 .idea
 .vscode
 
-# Env file
-.env
-
 # Virtual environment
 venv*
