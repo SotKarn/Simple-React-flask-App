@@ -3,17 +3,25 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
+import Carousel from 'react-material-ui-carousel'
 
 const ProductCard = (props) => {
 
   return (
       <Card sx={{ maxWidth: 250 }}>
         <CardActionArea>
-          <CardMedia
-            component="img"
-            image={props.data.product_imgs_src[0]}
-            alt={props.data.product_imgs_src[0]}
-          />
+          <Carousel autoPlay={false}>
+            {
+                props.data.image_urls.map( (image_url, index) =>
+                    <CardMedia
+                    key={index}
+                    component="img"
+                    image={image_url}
+                    alt={image_url}
+                    />
+                )
+            }
+          </Carousel>
           <CardContent>
             <Typography gutterBottom variant="h7" sx={{ marginBottom: '1.35em', display: "block", maxHeight: '50px', textOverflow: 'ellipsis'
             , overflow: "hidden"}} >
