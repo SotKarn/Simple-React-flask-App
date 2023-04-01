@@ -14,5 +14,5 @@ class Config:
                 ":" + \
                 os.environ.get("FLASK_MONGO_ADMIN_PASSWORD") + \
                 "@mongodb:27017/" +  \
-                os.environ.get("FLASK_MONGO_ADMIN_PASSWORD") + \
+                os.environ.get("FLASK_MONGO_DATABASE") + \
                 "?authSource=admin"
